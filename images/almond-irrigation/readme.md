@@ -8,3 +8,4 @@
 * mz_DU: results of the mzdu methodology, highlighting a major known leak and subsequent insufficient water delivery along a submain
 * gnss_fieldphoto: photo of coordinate data collection, California 2025, almond orchard
 * irt_fieldphoto: photo of irt setup, California 2025, almond orchard
+* du_test: fieldwork workflow for concurrent DU assessment
