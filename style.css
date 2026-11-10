@@ -188,3 +188,25 @@ h2 {
 .project-detail a {
   color: #32664e;
 }
+
+
+/* Keep complete conference photographs visible */
+
+.conference-card img.conference-photo {
+  display: block;
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  border-radius: 8px;
+}
+
+.conference-card figure {
+  margin: 25px 0;
+}
+
+.conference-card figcaption {
+  font-size: 14px;
+  color: #68786f;
+  line-height: 1.6;
+  margin-top: 10px;
+}
