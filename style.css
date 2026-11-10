@@ -224,3 +224,17 @@ h2 {
   margin-bottom: 20px;
   background-color: #f8f7f2;
 }
+
+
+/* Professional Experience Image Sizing */
+
+.experience-card img.experience-image {
+  display: block;
+  width: 100%;
+  max-width: 300px;
+  height: 160px;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto 20px;
+  border-radius: 8px;
+}
