@@ -238,3 +238,18 @@ h2 {
   margin: 0 auto 20px;
   border-radius: 8px;
 }
+
+
+/* Conferences & Awards Image Sizing */
+
+.conference-card img.conference-photo {
+  display: block;
+  width: 100%;
+  max-width: 350px;
+  height: 220px;
+  object-fit: contain;
+  object-position: center;
+  margin: 0 auto;
+  border-radius: 8px;
+}
+
