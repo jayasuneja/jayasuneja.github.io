@@ -7,78 +7,550 @@
   <meta name="viewport"
         content="width=device-width, initial-scale=1.0">
 
-  <title>UAV Irrigation Research | Jaya Suneja</title>
+  <title>Master's Research | Jaya Suneja</title>
 
-  <!-- Go up one folder to find style.css -->
   <link rel="stylesheet" href="../style.css">
 </head>
 
 <body>
 
+  <!-- NAVIGATION -->
   <nav>
     <div class="logo">Jaya Suneja</div>
+
     <div class="nav-links">
       <a href="../index.html">Home</a>
       <a href="../index.html#research">Research</a>
+      <a href="../conferences.html">Conferences & Awards</a>
       <a href="../index.html#contact">Contact</a>
     </div>
   </nav>
 
   <main>
+
     <section class="project-detail">
 
+      <!-- RESEARCH TITLE -->
+
       <p class="eyebrow">
-        MASTER'S RESEARCH | REMOTE SENSING
+        MASTER'S RESEARCH | UAV REMOTE SENSING
       </p>
 
       <h1>
-        UAV Remote Sensing for
-        Irrigation Distribution Uniformity
+        Remotely Sensing Irrigation Distribution
+        Uniformity in California Almond Orchards
       </h1>
 
       <p>
-        Investigating relationships between
-        remotely sensed vegetation and canopy
-        temperature and ground-measured
-        irrigation distribution uniformity
-        in almond orchards.
+        University of Wisconsin–Madison |
+        Biological Systems Engineering
       </p>
 
-      <h2>Research Overview</h2>
+
+      <!-- ============================= -->
+      <!-- ABSTRACT -->
+      <!-- ============================= -->
+
+      <h2>Abstract</h2>
+
       <p>
-        This research explores the potential
-        of multispectral and thermal UAV imagery
-        to characterize spatial variability
-        associated with irrigation performance
-        in almond orchards.
+      Woody perennial crops, such as almond orchards in California’s Central Valley, require
+      approximately 101-156 cm of water per year to meet crop evapotranspiration demands, while the
+      Central Valley only receives 50-75 cm of rainfall per year. This water requirement in a region
+      undergoing aridification poses significant challenges for both growers and regulators. Irrigation
+      Distribution Uniformity (DU) is a key metric for assessing how evenly water is applied within an
+      irrigation system. Regular DU testing helps to identify non-uniformity and guide maintenance to
+      improve efficiency. However, ground-based DU tests are time- and labor-intensive, are difficult
+      to schedule with growers, and typically represent only a narrow portion of a field, limiting their
+      routine use. Consequently, an estimated 66% of nut orchards in California’s Central Valley may
+      be operating with suboptimal irrigation uniformity.
+
+      To address these limitations, remote sensing can provide a whole-field perspective on
+      irrigation performance while reducing the time and labor required for DU testing. The goal of
+      this thesis is to develop new approaches for assessing DU using high resolution unoccupied
+      aerial systems (UAS) multispectral and thermal data. The specific objectives are to: (1)
+      summarize and assess the current methodology of assessing irrigation DU; (2) synthesize the
+      current research on the use of remote sensing technologies for detecting and quantifying
+      irrigation non-uniformity; (3) quantify the Lowest Quarter Distribution Uniformity (DUlq),
+      Christiansen Uniformity Coefficient (CUC), and Uniformity Coefficient (UC) for entire
+      California almond orchards using UAV multispectral and thermal imagery, and compare these
+      with localized catch can test measurements; (4) identify spatial patterns of over- and underwatering 
+      to support targeted system maintenance; and (5) develop practical methodologies and
+      remotely sensed DU indicators that enable growers to rapidly evaluate irrigation DU in almond
+      orchards, with or without extensive field testing.
+        
+      We accomplished these objectives by conducting a literature review across the existing
+      remote sensing of DU literature to create a methodology that builds upon existing work. We then
+      collected UAS multispectral and thermal imagery over 14 almond orchards in the California
+      Central Valley. We used catch can test data and canopy pixels (NDVI > 0.30) to calculate UC,
+      DUlq, and CUC using whole-field and catch can test location pixels with GRVI, NDRE, NDVI,
+      LE, and LST. We identified the areas of over- and under-watering by calculating a modified zscore for 
+      GRVI and LST and used their distribution extremes to flag pixels for further investigation using land 
+      contextual variables, including soil available water content and elevation data.
+        
+      From the literature review, we found that thermal and related imagery, such as LST, LE,
+      and CWSI can detect short-term responses to water stress, with the heterogeneity of irrigation
+      application being more pronounced in water stress periods. Vegetation indices, such as GRVI,
+      NDRE, and NDVI detect the long-term effects of water stress as well as historical differences in
+      land practices and soil heterogeneity. In California almond orchards, GRVI performed the best
+      for remotely sensing DU in the UC, CUC, and DUlq equations for both the whole-field analyses
+      and the catch can test location analyses. I developed a modified z-score index, MZDU, defined
+      as the difference between the LST modified z-score and GRVI modified z-score for each pixel,
+      which successfully captured the known leaks and clogs at a focus test site and revealed the
+      patterns of over- and under-watering for further investigation. The final set of tools from this
+      study includes flagging pixels based on their MZDU value (< -3.0 for over-watering or > 3.0 for
+      under-watering), and diagnostic approach for determining if the problem is irrigation-based or
+      land-based, and a diagnostic approach for identifying potential failures in pressure-compensating
+      irrigation lines on fields with elevation changes.
+  
+      The resulting methodology provides actionable, time-efficient tools for growers and
+      organizations such as Resource Conservation Districts to assess irrigation uniformity in almond
+      orchards. This framework can be transferable to other woody perennial crops and irrigation
+      systems, offering a pathway toward more frequent irrigation system evaluation and improved
+      water-use efficiency in water-limited agricultural regions.
       </p>
+
+
+      <!-- ============================= -->
+      <!-- INTRODUCTION -->
+      <!-- ============================= -->
+
+      <h2>Introduction</h2>
+
+      <p>
+        Spatial variability in irrigation
+        application can produce differences in
+        soil water availability and plant water
+        status. These differences may influence
+        canopy temperature and vegetation
+        reflectance, providing opportunities
+        to investigate irrigation performance
+        using remote sensing technologies.
+        The following illustrations introduce
+        the relationship between irrigation
+        distribution uniformity, vegetation
+        indices, thermal imagery, and hydraulic
+        characteristics of irrigation systems.
+      </p>
+
+
+      <!-- Figure 1: DU Illustration -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/du_illustration.png"
+          alt="Illustration of uneven soil moisture
+               in an almond orchard"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 1.</strong>
+          Hand-drawn illustration of spatial
+          differences in soil moisture associated
+          with poor irrigation distribution
+          uniformity in an almond orchard.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 2: NDVI Illustration -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/ndvi_illustration.png"
+          alt="Illustration of NDVI and vegetation
+               reflectance"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 2.</strong>
+          Illustration of the Normalized Difference
+          Vegetation Index (NDVI), created using
+          Canva Pro.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 3: LST Illustration -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/lst_illustration.png"
+          alt="Illustration of land surface
+               temperature"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 3.</strong>
+          Illustration of land surface temperature
+          (LST) in remote sensing applications,
+          created using Canva Pro.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 4: Bernoulli Illustration -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/bernoulli_illustration.png"
+          alt="Illustration of the change in pressure along a drip line lateral in a micro-irrigation 
+          system with elevation change. (Left) x kPa (or y psi) decreases to x-6.9 kPa (or y – 1 psi) on the
+          right after a 0.704 m or 2.31ft increase in elevation. "
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 4.</strong>
+          Illustration of the influence of
+          gravity and elevation on line pressure
+          in a non-pressure-compensating
+          irrigation system.
+        </figcaption>
+      </figure>
+
+
+
+      <!-- ============================= -->
+      <!-- METHODS -->
+      <!-- ============================= -->
 
       <h2>Methods</h2>
+
       <p>
-        UAV imagery was processed to derive
-        vegetation indices and land surface
-        temperature. These measurements were
-        compared with field observations of
-        irrigation distribution uniformity.
+        The research combined ground-based
+        irrigation assessments with UAV imagery,
+        field instrumentation, and spatial
+        analysis. The following figures describe
+        the study area, data collection procedures,
+        imagery processing, and preparation of
+        geospatial model inputs.
       </p>
 
-      <h2>Results and Figures</h2>
+
+      <!-- Figure 5: California Study Area -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/CA_map.png"
+          alt="California study area map showing
+               almond orchard locations"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 5.</strong>
+          ArcGIS Pro map of California almond
+          orchard study locations and
+          irrigation distribution uniformity
+          field assessments.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 6: Thesis Workflow -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/thesis_workflow.png"
+          alt="Research methodology workflow"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 6.</strong>
+          Research methodology workflow
+          illustrating the primary stages
+          of data acquisition, processing,
+          and analysis.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 7: DU Field Testing -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/du_test.png"
+          alt="Fieldwork workflow for irrigation
+               distribution uniformity assessment"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 7.</strong>
+          Fieldwork workflow for concurrent
+          irrigation distribution uniformity
+          assessments.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 8: GNSS Fieldwork -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/gnss_fieldphoto.png"
+          alt="GNSS coordinate collection
+               in a California almond orchard"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 8.</strong>
+          GNSS coordinate data collection
+          during almond orchard fieldwork
+          in California, 2025.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 9: IRT Setup -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/irt_setup.png"
+          alt="Annotated Apogee infrared
+               thermometer setup"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 9.</strong>
+          Annotated photograph and imagery
+          depicting the Apogee Infrared
+          Thermometer setup used for thermal
+          band calibration.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 10: IRT Field Photograph -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/irt_fieldphoto.png"
+          alt="Infrared thermometer setup
+               in an almond orchard"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 10.</strong>
+          Infrared thermometer field setup
+          during data collection in a
+          California almond orchard, 2025.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 11: DU Method Alignment -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/du_methods_1.png"
+          alt="Catch can test coordinates aligned
+               with aggregated NDVI raster"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 11.</strong>
+          Diagram illustrating the relationship
+          between catch-can test coordinates
+          and the alignment of field observations
+          with a 6 m aggregated NDVI raster.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 12: Stacked Rasters -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/stacked_rasters.png"
+          alt="Stacked raster inputs for
+               spatial DU analysis"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 12.</strong>
+          Visualization of stacked geospatial
+          raster inputs used in the spatial
+          analysis of irrigation distribution
+          uniformity.
+        </figcaption>
+      </figure>
+
+
+
+      <!-- ============================= -->
+      <!-- RESULTS -->
+      <!-- ============================= -->
+
+      <h2>Results</h2>
+
       <p>
-        Research maps, figures, and selected
-        findings will be added here.
+        The following figures illustrate
+        selected results from the spatial DU
+        analysis, including the identification
+        of irrigation-related anomalies and
+        investigation of elevation-related
+        differences in remotely sensed
+        canopy responses.
       </p>
 
-      <h2>Code and Data</h2>
+
+      <!-- Figure 13: Management Zone DU -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/mz_DU.png"
+          alt="Spatial irrigation DU results
+               highlighting a known leak"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 13.</strong>
+          Results of the management-zone DU
+          methodology, highlighting a known
+          irrigation leak and associated
+          insufficient water delivery
+          along a submain.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 14: Elevation Results -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/results_elevation.png"
+          alt="Boxplots comparing elevation
+               and remotely sensed canopy responses"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 14.</strong>
+          Box-and-whisker plots examining
+          relationships between elevation
+          and canopy responses observed
+          using multispectral and
+          thermal imagery.
+        </figcaption>
+      </figure>
+
+
+
+      <!-- ============================= -->
+      <!-- THERMAL CALIBRATION -->
+      <!-- ============================= -->
+
+      <h2>Thermal Calibration</h2>
+
       <p>
-        A link to the research code repository
-        will be added here.
+        A separate component of this research
+        investigated thermal imagery calibration
+        using infrared thermometer measurements.
+        The following figures document the
+        calibration workflow, comparisons
+        before and after calibration, and
+        examples of thermal drift.
       </p>
 
-      <a href="../index.html#research">
-        ← Back to Research
-      </a>
+
+      <!-- Figure 15: Thermal Workflow -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/thermal_workflow.png"
+          alt="Thermal calibration workflow"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 15.</strong>
+          Methodology workflow for the
+          thermal calibration analysis.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 16: Before Calibration -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/thermal_before_scatterplot.png"
+          alt="Infrared thermometer and thermal
+               band measurements before calibration"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 16.</strong>
+          Scatterplot comparing infrared
+          thermometer measurements and
+          UAV thermal band measurements
+          before calibration.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 17: After Calibration -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/thermal_after_scatterplot.png"
+          alt="Infrared thermometer and thermal
+               band measurements after calibration"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 17.</strong>
+          Scatterplot comparing infrared
+          thermometer measurements and
+          UAV thermal band measurements
+          following linear calibration.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 18: Thermal Results 1 -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/thermal_results1.png"
+          alt="Thermal calibration results for
+               a flight without thermal drift"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 18.</strong>
+          Thermal calibration results
+          for a UAV flight without
+          apparent thermal drift.
+        </figcaption>
+      </figure>
+
+
+      <!-- Figure 19: Thermal Results 2 -->
+      <figure class="thesis-figure">
+        <img
+          src="../images/almond-irrigation/thermal_results2.png"
+          alt="Thermal calibration results for
+               a flight exhibiting thermal drift"
+          loading="lazy"
+        >
+
+        <figcaption>
+          <strong>Figure 19.</strong>
+          Thermal calibration results
+          for a UAV flight exhibiting
+          thermal drift.
+        </figcaption>
+      </figure>
+
+
+      <!-- BACK TO RESEARCH -->
+
+      <p class="project-back-link">
+        <a href="../index.html#research">
+          ← Back to Research
+        </a>
+      </p>
 
     </section>
+
   </main>
 
 </body>
