@@ -1,0 +1,98 @@
+/* General website styling */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: Arial, sans-serif;
+  background-color: #f8f7f2;
+  color: #263b32;
+}
+
+/* Navigation */
+
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 25px 8%;
+  background-color: #f8f7f2;
+}
+
+.logo {
+  font-size: 22px;
+  font-weight: bold;
+}
+
+.nav-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+}
+
+.nav-links a {
+  text-decoration: none;
+  color: #263b32;
+  font-size: 14px;
+}
+
+.nav-links a:hover {
+  color: #73967c;
+}
+
+/* Hero introduction */
+
+.hero {
+  background-color: #dce7dd;
+  min-height: 65vh;
+  display: flex;
+  align-items: center;
+}
+
+.hero-content {
+  max-width: 700px;
+}
+
+.eyebrow {
+  font-size: 13px;
+  letter-spacing: 2px;
+  font-weight: bold;
+}
+
+h1 {
+  font-size: clamp(42px, 7vw, 80px);
+  margin-bottom: 20px;
+}
+
+.hero p {
+  line-height: 1.8;
+  font-size: 19px;
+}
+
+/* Buttons */
+
+.button {
+  display: inline-block;
+  margin-top: 25px;
+  padding: 14px 25px;
+  background-color: #263b32;
+  color: white;
+  text-decoration: none;
+  border-radius: 5px;
+}
+
+.button:hover {
+  background-color: #456b55;
+}
+
+/* Sections */
+
+section {
+  padding: 90px 10%;
+}
+
+h2 {
+  font-size: 34px;
+}
