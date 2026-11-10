@@ -6,3 +6,5 @@
 * stacked_rasters: visual of model inputs for DU spatial analysis
 * CA_map: ArcGIS Pro map of DU tests/almond orchards
 * mz_DU: results of the mzdu methodology, highlighting a major known leak and subsequent insufficient water delivery along a submain
+* gnss_fieldphoto: photo of coordinate data collection, California 2025, almond orchard
+* irt_fieldphoto: photo of irt setup, California 2025, almond orchard
