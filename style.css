@@ -384,3 +384,42 @@ h2 {
   }
 
 }
+
+
+/* =====================================
+   PROFESSIONAL RECOGNITION & MEDIA
+   ===================================== */
+
+.media-card {
+  display: flex;
+  flex-direction: column;
+  transition: transform 0.3s ease,
+              box-shadow 0.3s ease;
+}
+
+.media-card:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.10);
+}
+
+.media-card .award-organization {
+  line-height: 1.5;
+}
+
+.media-link {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: auto;
+  padding: 12px 18px;
+  background-color: #263b32;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.media-link:hover {
+  background-color: #456b55;
+  color: #ffffff;
+}
