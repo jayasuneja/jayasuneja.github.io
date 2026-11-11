@@ -1,7 +1,11 @@
 
-/* ==========================================
+/* =====================================
    GENERAL WEBSITE STYLING
-   ========================================== */
+   ===================================== */
+
+* {
+  box-sizing: border-box;
+}
 
 html {
   scroll-behavior: smooth;
@@ -14,15 +18,28 @@ body {
   color: #263b32;
 }
 
+img {
+  max-width: 100%;
+}
 
-/* ==========================================
+h2 {
+  font-size: 34px;
+}
+
+section {
+  padding: 90px 10%;
+}
+
+
+/* =====================================
    NAVIGATION
-   ========================================== */
+   ===================================== */
 
 nav {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 25px;
   padding: 25px 8%;
   background-color: #f8f7f2;
 }
@@ -30,6 +47,7 @@ nav {
 .logo {
   font-size: 22px;
   font-weight: bold;
+  white-space: nowrap;
 }
 
 .nav-links {
@@ -49,18 +67,27 @@ nav {
 }
 
 
-/* ==========================================
-   HERO INTRODUCTION
-   ========================================== */
+/* =====================================
+   HOMEPAGE INTRODUCTION
+   ===================================== */
 
 .hero {
   background-color: #dce7dd;
   min-height: 65vh;
-  display: flex;
+  padding: 80px 8%;
+}
+
+.hero-container {
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1fr);
+  gap: 60px;
   align-items: center;
+  max-width: 1300px;
+  margin: 0 auto;
 }
 
 .hero-content {
+  min-width: 0;
   max-width: 700px;
 }
 
@@ -70,27 +97,28 @@ nav {
   font-weight: bold;
 }
 
-h1 {
-  font-size: clamp(42px, 7vw, 80px);
+.hero-content h1 {
+  font-size: clamp(42px, 5vw, 68px);
+  margin: 25px 0;
+}
+
+.hero-content p {
+  display: block;
+  font-size: 17px;
+  line-height: 1.8;
   margin-bottom: 20px;
 }
 
-.hero p {
-  line-height: 1.8;
-  font-size: 19px;
+.hero-actions {
+  display: block;
+  margin-top: 25px;
 }
-
-
-/* ==========================================
-   BUTTONS
-   ========================================== */
 
 .button {
   display: inline-block;
-  margin-top: 25px;
   padding: 14px 25px;
   background-color: #263b32;
-  color: white;
+  color: #ffffff;
   text-decoration: none;
   border-radius: 5px;
 }
@@ -100,32 +128,39 @@ h1 {
 }
 
 
-/* ==========================================
-   GENERAL SECTIONS
-   ========================================== */
+/* Homepage portrait */
 
-section {
-  padding: 90px 10%;
+.hero-photo {
+  width: 100%;
+  min-width: 0;
 }
 
-h2 {
-  font-size: 34px;
+.hero-photo img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: 650px;
+  object-fit: contain;
+  object-position: center;
+  border-radius: 16px;
+  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
 }
 
 
-/* ==========================================
-   RESEARCH PROJECT GALLERY
-   ========================================== */
+/* =====================================
+   FEATURED RESEARCH CARDS
+   ===================================== */
 
 .project-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: 25px;
   margin-top: 40px;
 }
 
 .project-card {
-  background-color: white;
+  min-width: 0;
+  background-color: #ffffff;
   border-radius: 12px;
   overflow: hidden;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
@@ -136,13 +171,18 @@ h2 {
   transform: translateY(-8px);
 }
 
-.project-image {
-  background-color: #dce7dd;
-  height: 180px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-size: 60px;
+.project-card img.project-image {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+}
+
+.project-card img.project-image[src$="nasa_logo.png"] {
+  object-fit: contain;
+  padding: 15px;
+  background-color: #ffffff;
 }
 
 .project-info {
@@ -172,9 +212,70 @@ h2 {
 }
 
 
-/* ==========================================
+/* =====================================
+   PROFESSIONAL EXPERIENCE
+   ===================================== */
+
+.experience-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 40px;
+}
+
+.experience-card {
+  min-width: 0;
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.experience-card h3 {
+  font-size: 21px;
+  line-height: 1.4;
+  color: #263b32;
+  margin: 15px 0;
+}
+
+.experience-meta {
+  font-size: 14px;
+  line-height: 1.5;
+  color: #68786f;
+  font-weight: bold;
+}
+
+.experience-card ul {
+  padding-left: 22px;
+  margin-bottom: 0;
+}
+
+.experience-card li {
+  color: #526158;
+  line-height: 1.7;
+  margin-bottom: 12px;
+}
+
+.experience-card li strong {
+  color: #263b32;
+}
+
+.experience-card img.experience-image {
+  display: block;
+  width: 100%;
+  max-width: 600px;
+  height: 320px;
+  object-fit: contain;
+  object-position: left center;
+  margin: 0 0 20px;
+  border-radius: 8px;
+  background-color: #f8f7f2;
+}
+
+
+/* =====================================
    INDIVIDUAL RESEARCH PROJECT PAGES
-   ========================================== */
+   ===================================== */
 
 .project-detail {
   max-width: 900px;
@@ -200,16 +301,16 @@ h2 {
   color: #32664e;
 }
 
+.project-back-link {
+  margin-top: 65px;
+  padding-top: 25px;
+  border-top: 1px solid #dce7dd;
+}
 
-/* ==========================================
+
+/* =====================================
    MASTER'S RESEARCH FIGURES
-
-   Maximum figure width: 500px
-   Images centered and proportions preserved
-   ========================================== */
-
-
-/* Master's Research Figures - 30% Larger */
+   ===================================== */
 
 .project-detail .thesis-figure {
   width: 100%;
@@ -221,9 +322,7 @@ h2 {
 .project-detail .thesis-figure img {
   display: block;
   width: 100%;
-  max-width: 650px;
   height: auto;
-  max-height: none;
   object-fit: contain;
   margin: 0 auto;
   border-radius: 8px;
@@ -237,26 +336,34 @@ h2 {
   text-align: left;
 }
 
-
 .project-detail .thesis-figure figcaption strong {
   color: #263b32;
 }
 
-.project-back-link {
-  margin-top: 65px;
-  padding-top: 25px;
-  border-top: 1px solid #dce7dd;
+
+/* =====================================
+   CONFERENCES & AWARDS
+   ===================================== */
+
+.conference-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 30px;
+  margin-top: 35px;
 }
 
-
-/* ==========================================
-   CONFERENCES & AWARDS
-   ========================================== */
+.conference-card {
+  min-width: 0;
+  padding: 25px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
 
 .conference-card img.conference-photo {
   display: block;
   width: 100%;
-  max-width: 525px;
+  max-width: 650px;
   height: auto;
   object-fit: contain;
   margin: 0 auto;
@@ -274,120 +381,85 @@ h2 {
   margin-top: 10px;
 }
 
+.conference-card p {
+  line-height: 1.7;
+}
 
-/* ==========================================
-   PROFESSIONAL EXPERIENCE IMAGES
-   ========================================== */
-
-.experience-card img.experience-image {
-  display: block;
-  width: 100%;
-  max-width: 600px;
-  height: 320px;
-  object-fit: contain;
-  object-position: left center;
-  margin: 0 auto 20px;
-  border-radius: 8px;
-  background-color: #f8f7f2;
+.conference-card a {
+  color: #32664e;
+  font-weight: bold;
 }
 
 
-/* ==========================================
-   CONTACT SECTION
-   ========================================== */
+/* Awards */
 
-#contact {
-  background-color: #dce7dd;
+.awards-section {
+  margin-top: 80px;
+  padding-top: 40px;
+  border-top: 2px solid #dce7dd;
 }
 
-#contact > p {
-  max-width: 750px;
+.awards-section h2 {
+  font-size: 34px;
+  color: #263b32;
+}
+
+.awards-section > h3 {
+  font-size: 24px;
+  margin-top: 55px;
+  margin-bottom: 25px;
+  color: #32664e;
+}
+
+.awards-section > p {
+  max-width: 800px;
   line-height: 1.8;
+  color: #526158;
 }
 
-.contact-container {
+.awards-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 25px;
-  margin-top: 35px;
 }
 
-.contact-item {
+.award-card {
+  min-width: 0;
   background-color: #ffffff;
   padding: 25px;
   border-radius: 12px;
+  border-left: 4px solid #73967c;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
 }
 
-.contact-item h3 {
-  margin-top: 0;
-  color: #263b32;
-  font-size: 19px;
-}
-
-.contact-item a {
-  color: #32664e;
-  text-decoration: none;
+.award-year {
+  display: inline-block;
+  font-size: 13px;
   font-weight: bold;
-  overflow-wrap: anywhere;
+  color: #32664e;
+  margin-bottom: 12px;
 }
 
-.contact-item a:hover {
-  text-decoration: underline;
+.award-card h4 {
+  font-size: 19px;
+  line-height: 1.4;
+  color: #263b32;
+  margin: 0 0 12px;
 }
 
-.contact-item p {
+.award-organization {
+  font-size: 14px;
+  font-weight: bold;
+  color: #68786f;
+}
+
+.award-card p {
+  line-height: 1.7;
   color: #526158;
-  margin-bottom: 0;
 }
 
 
-/* ==========================================
-   RESPONSIVE LAYOUTS
-   ========================================== */
-
-@media (max-width: 800px) {
-
-  .project-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .experience-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-detail .thesis-figure {
-    width: 100%;
-    max-width: 500px;
-  }
-
-  .project-detail .thesis-figure img {
-    width: 100%;
-    height: auto;
-  }
-
-}
-
-@media (max-width: 750px) {
-
-  .contact-container {
-    grid-template-columns: 1fr;
-  }
-
-  .conference-grid {
-    grid-template-columns: 1fr;
-  }
-
-  .project-detail .thesis-figure figcaption {
-    font-size: 13px;
-  }
-
-}
-
-
-/* =====================================
-   PROFESSIONAL RECOGNITION & MEDIA
-   ===================================== */
+/* Professional Recognition & Media */
 
 .media-card {
   display: flex;
@@ -425,96 +497,95 @@ h2 {
 
 
 /* =====================================
-   HOMEPAGE INTRODUCTION & PROFILE PHOTO
+   FOREST NURSERY RESEARCH PAGE
    ===================================== */
 
-.hero {
-  background-color: #dce7dd;
-  padding: 80px 8%;
-}
-
-.hero-container {
-  display: grid;
-  grid-template-columns: 1.3fr 1fr;
-  gap: 60px;
-  align-items: center;
-  max-width: 1300px;
+.forest-project {
+  max-width: 900px;
   margin: 0 auto;
+  padding: 55px 24px 90px;
 }
 
-.hero-content {
-  max-width: 700px;
+.forest-project h1 {
+  font-size: clamp(32px, 4vw, 46px);
+  line-height: 1.2;
+  color: #263b32;
+  margin-bottom: 14px;
 }
 
-.hero-content h1 {
-  font-size: clamp(42px, 5vw, 68px);
-  margin-bottom: 25px;
+.forest-project .project-subtitle {
+  color: #456b55;
+  font-size: 15px;
+  font-weight: bold;
+  letter-spacing: 0.4px;
 }
 
-.hero-content p {
-  font-size: 17px;
-  line-height: 1.8;
-  margin-bottom: 20px;
+.forest-project h2 {
+  font-size: 27px;
+  color: #263b32;
+  margin-top: 55px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #dce7dd;
 }
 
-/* Profile photo */
-
-.hero-photo {
-  width: 100%;
+.forest-project > p {
+  font-size: 16px;
+  line-height: 1.85;
+  color: #526158;
 }
 
-.hero-photo img {
+
+/* Forest Nursery Photo Gallery */
+
+.forest-photo-gallery {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 18px;
+  margin: 35px 0 55px;
+}
+
+.forest-photo-gallery figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.forest-photo-gallery img {
   display: block;
   width: 100%;
-  height: auto;
-  max-height: 650px;
-  object-fit: contain;
+  height: 190px;
+  object-fit: cover;
   object-position: center;
-  border-radius: 16px;
-  box-shadow: 0 8px 25px rgba(0, 0, 0, 0.12);
+  border-radius: 10px;
+  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Mobile-friendly layout */
-
-@media (max-width: 850px) {
-
-  .hero-container {
-    grid-template-columns: 1fr;
-    gap: 35px;
-  }
-
-  .hero-photo img {
-    height: auto;
-    max-height: 500px;
-    object-fit: contain;
-  }
-
-  .hero {
-    padding: 60px 8%;
-  }
+.forest-photo-gallery figcaption {
+  margin-top: 10px;
+  font-size: 13px;
+  line-height: 1.5;
+  color: #526158;
+  text-align: center;
 }
 
 
-/* =====================================
-   FOREST NURSERY RESEARCH DOCUMENTS
-   ===================================== */
+/* Forest Research Documents */
 
 .research-documents-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
+  grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 25px;
   margin-top: 30px;
 }
 
 .research-document-card {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
   background-color: #ffffff;
   padding: 30px;
   border-radius: 12px;
   border-left: 4px solid #73967c;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
-
-  display: flex;
-  flex-direction: column;
 }
 
 .document-type {
@@ -556,169 +627,6 @@ h2 {
   color: #ffffff;
 }
 
-@media (max-width: 750px) {
-  .research-documents-grid {
-    grid-template-columns: 1fr;
-  }
-}
-
-
-/* Research project card images */
-
-.project-card img.project-image {
-  display: block;
-  width: 100%;
-  height: 230px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 10px;
-  margin-bottom: 20px;
-}
-
-/* Preserve the full NASA logo */
-
-.project-card img.project-image[src$="nasa_logo.png"] {
-  object-fit: contain;
-  padding: 15px;
-  box-sizing: border-box;
-  background-color: #ffffff;
-}
-
-
-/* =====================================
-   FOREST NURSERY RESEARCH PAGE
-   ===================================== */
-
-/* Main page layout */
-.forest-project {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 55px 24px 90px;
-  box-sizing: border-box;
-}
-
-/* Research title */
-.forest-project h1 {
-  font-size: clamp(32px, 4vw, 46px);
-  line-height: 1.2;
-  color: #263b32;
-  margin-bottom: 14px;
-}
-
-.forest-project .project-subtitle {
-  color: #456b55;
-  font-size: 15px;
-  font-weight: bold;
-  letter-spacing: 0.4px;
-}
-
-/* Research section headings */
-.forest-project h2 {
-  font-size: 27px;
-  color: #263b32;
-  margin-top: 55px;
-  padding-bottom: 10px;
-  border-bottom: 1px solid #dce7dd;
-}
-
-/* Main body text */
-.forest-project > p {
-  font-size: 16px;
-  line-height: 1.85;
-  color: #526158;
-}
-
-/* Three-photo gallery */
-.forest-photo-gallery {
-  display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: 18px;
-  margin: 35px 0 55px;
-}
-
-.forest-photo-gallery figure {
-  margin: 0;
-  min-width: 0;
-}
-
-.forest-photo-gallery img {
-  display: block;
-  width: 100%;
-  height: 190px;
-  object-fit: cover;
-  object-position: center;
-  border-radius: 10px;
-  box-shadow: 0 3px 12px rgba(0, 0, 0, 0.08);
-}
-
-.forest-photo-gallery figcaption {
-  margin-top: 10px;
-  font-size: 13px;
-  line-height: 1.5;
-  color: #526158;
-  text-align: center;
-}
-
-/* Tablets and smaller screens */
-@media (max-width: 750px) {
-  .forest-photo-gallery {
-    grid-template-columns: 1fr;
-    gap: 25px;
-  }
-
-  .forest-photo-gallery img {
-    height: 260px;
-  }
-
-  .forest-project {
-    padding: 35px 20px 65px;
-  }
-
-  .forest-project h2 {
-    font-size: 24px;
-  }
-}
-
-
-/* Homepage research button positioning */
-
-.hero-content .button {
-  display: inline-block;
-  margin-top: 20px;
-  clear: both;
-}
-
-.hero-content p {
-  display: block;
-  width: 100%;
-  max-width: 100%;
-  margin-bottom: 20px;
-}
-
-.hero-actions {
-  margin-top: 25px;
-}
-
-.hero-content {
-  max-width: 700px;
-}
-
-.hero-container {
-  gap: 70px;
-  align-items: center;
-}
-
-
-/* Conference image sizing */
-
-.conference-card img.conference-photo {
-  display: block;
-  width: 100%;
-  max-width: 650px;
-  height: auto;
-  margin: 0 auto;
-}
-
 
 /* =====================================
    ARTWORK PAGE
@@ -750,9 +658,7 @@ h2 {
 }
 
 
-/* =====================================
-   MASONRY-STYLE ARTWORK COLLAGE
-   ===================================== */
+/* Masonry Artwork Collage */
 
 .artwork-gallery {
   columns: 3;
@@ -778,14 +684,11 @@ h2 {
 }
 
 
-/* =====================================
-   CAPTIONS ON HOVER
-   ===================================== */
+/* Artwork Hover Captions */
 
 .artwork-caption {
   position: absolute;
   inset: auto 0 0 0;
-
   padding: 35px 20px 20px;
   color: #ffffff;
 
@@ -816,9 +719,6 @@ h2 {
   margin: 0;
 }
 
-
-/* Show caption when hovered or focused */
-
 .artwork-item:hover .artwork-caption,
 .artwork-item:focus .artwork-caption {
   opacity: 1;
@@ -831,46 +731,7 @@ h2 {
 
 
 /* =====================================
-   RESPONSIVE LAYOUT
-   ===================================== */
-
-@media (max-width: 950px) {
-  .artwork-gallery {
-    columns: 2;
-  }
-}
-
-@media (max-width: 600px) {
-  .artwork-gallery {
-    columns: 1;
-  }
-
-  .artwork-page {
-    padding: 45px 6%;
-  }
-}
-
-/* Touchscreen devices: keep captions visible */
-
-@media (hover: none) {
-  .artwork-caption {
-    opacity: 1;
-    transform: none;
-  }
-}
-
-/* Respect reduced-motion preferences */
-
-@media (prefers-reduced-motion: reduce) {
-  .artwork-item img,
-  .artwork-caption {
-    transition: none;
-  }
-}
-
-
-/* =====================================
-   BEYOND WORK PHOTO COLLAGE
+   BEYOND THE RESEARCH PHOTO COLLAGE
    ===================================== */
 
 .beyond-photo-section {
@@ -883,15 +744,11 @@ h2 {
   margin-bottom: 25px;
 }
 
-/* Photo grid */
-
 .beyond-photo-grid {
   display: grid;
   grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 18px;
 }
-
-/* Individual photos */
 
 .beyond-photo {
   margin: 0;
@@ -908,8 +765,6 @@ h2 {
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
 }
 
-/* Short captions */
-
 .beyond-photo figcaption {
   font-size: 13px;
   color: #526158;
@@ -918,7 +773,73 @@ h2 {
   line-height: 1.5;
 }
 
-/* Tablet layout */
+
+/* =====================================
+   CONTACT SECTION
+   ===================================== */
+
+#contact {
+  background-color: #dce7dd;
+}
+
+#contact > p {
+  max-width: 750px;
+  line-height: 1.8;
+}
+
+.contact-container {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 25px;
+  margin-top: 35px;
+}
+
+.contact-item {
+  min-width: 0;
+  background-color: #ffffff;
+  padding: 25px;
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+}
+
+.contact-item h3 {
+  margin-top: 0;
+  color: #263b32;
+  font-size: 19px;
+}
+
+.contact-item a {
+  color: #32664e;
+  text-decoration: none;
+  font-weight: bold;
+  overflow-wrap: anywhere;
+}
+
+.contact-item a:hover {
+  text-decoration: underline;
+}
+
+.contact-item p {
+  color: #526158;
+  margin-bottom: 0;
+}
+
+
+/* =====================================
+   RESPONSIVE LAYOUT
+   ===================================== */
+
+/* Tablet */
+
+@media (max-width: 950px) {
+  .project-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+
+  .artwork-gallery {
+    columns: 2;
+  }
+}
 
 @media (max-width: 900px) {
   .beyond-photo-grid {
@@ -926,7 +847,75 @@ h2 {
   }
 }
 
-/* Mobile layout */
+/* Small tablets */
+
+@media (max-width: 850px) {
+  .hero-container {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero-photo img {
+    max-height: 500px;
+  }
+
+  .hero {
+    padding: 60px 8%;
+  }
+
+  nav {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+/* Mobile */
+
+@media (max-width: 750px) {
+  section {
+    padding: 60px 6%;
+  }
+
+  .project-grid,
+  .experience-grid,
+  .conference-grid,
+  .awards-grid,
+  .research-documents-grid,
+  .contact-container {
+    grid-template-columns: 1fr;
+  }
+
+  .forest-photo-gallery {
+    grid-template-columns: 1fr;
+    gap: 25px;
+  }
+
+  .forest-photo-gallery img {
+    height: 260px;
+  }
+
+  .forest-project {
+    padding: 35px 20px 65px;
+  }
+
+  .forest-project h2 {
+    font-size: 24px;
+  }
+
+  .project-detail .thesis-figure figcaption {
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 600px) {
+  .artwork-gallery {
+    columns: 1;
+  }
+
+  .artwork-page {
+    padding: 45px 6%;
+  }
+}
 
 @media (max-width: 550px) {
   .beyond-photo-grid {
@@ -937,5 +926,26 @@ h2 {
     height: auto;
     max-height: 350px;
     object-fit: contain;
+  }
+}
+
+
+/* Touchscreens: artwork captions stay visible */
+
+@media (hover: none) {
+  .artwork-caption {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Reduced-motion accessibility */
+
+@media (prefers-reduced-motion: reduce) {
+  .project-card,
+  .media-card,
+  .artwork-item img,
+  .artwork-caption {
+    transition: none;
   }
 }
