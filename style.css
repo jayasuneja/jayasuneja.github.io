@@ -307,3 +307,30 @@ h2 {
     grid-template-columns: 1fr;
   }
 }
+
+/* Master's Research Figure Sizing */
+
+.thesis-figure {
+  max-width: 500px;
+  width: 100%;
+  margin: 40px auto;
+  text-align: center;
+}
+
+.thesis-figure img {
+  display: block;
+  width: 100%;
+  height: auto;
+  max-height: none;
+  object-fit: contain;
+  border-radius: 8px;
+  margin: 0 auto;
+}
+
+.thesis-figure figcaption {
+  margin-top: 12px;
+  font-size: 14px;
+  line-height: 1.6;
+  color: #526158;
+  text-align: left;
+}
