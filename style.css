@@ -493,3 +493,71 @@ h2 {
     padding: 60px 8%;
   }
 }
+
+
+/* =====================================
+   FOREST NURSERY RESEARCH DOCUMENTS
+   ===================================== */
+
+.research-documents-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.research-document-card {
+  background-color: #ffffff;
+  padding: 30px;
+  border-radius: 12px;
+  border-left: 4px solid #73967c;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.06);
+
+  display: flex;
+  flex-direction: column;
+}
+
+.document-type {
+  color: #456b55;
+  font-size: 13px;
+  font-weight: bold;
+  margin-bottom: 15px;
+}
+
+.research-document-card h3 {
+  color: #263b32;
+  font-size: 21px;
+  line-height: 1.4;
+  margin: 0 0 15px;
+}
+
+.research-document-card p {
+  color: #526158;
+  font-size: 15px;
+  line-height: 1.7;
+  flex-grow: 1;
+}
+
+.document-link {
+  display: inline-block;
+  align-self: flex-start;
+  margin-top: 20px;
+  padding: 12px 18px;
+  background-color: #263b32;
+  color: #ffffff;
+  font-size: 14px;
+  font-weight: bold;
+  text-decoration: none;
+  border-radius: 6px;
+}
+
+.document-link:hover {
+  background-color: #456b55;
+  color: #ffffff;
+}
+
+@media (max-width: 750px) {
+  .research-documents-grid {
+    grid-template-columns: 1fr;
+  }
+}
