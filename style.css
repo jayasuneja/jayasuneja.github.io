@@ -256,12 +256,11 @@ h2 {
 .conference-card img.conference-photo {
   display: block;
   width: 100%;
-  max-width: 350px;
-  height: 220px;
+  max-width: 525px;
+  height: auto;
   object-fit: contain;
-  object-position: center;
-  margin: 0 auto;
-  border-radius: 8px;
+  margin: 20px 0;
+  border-radius: 10px;
 }
 
 .conference-card figure {
