@@ -718,3 +718,152 @@ h2 {
   height: auto;
   margin: 0 auto;
 }
+
+
+/* =====================================
+   ARTWORK PAGE
+   ===================================== */
+
+.artwork-page {
+  padding: 70px 8%;
+  max-width: 1450px;
+  margin: 0 auto;
+}
+
+.artwork-intro {
+  text-align: center;
+  margin-bottom: 50px;
+}
+
+.artwork-intro h1 {
+  font-size: clamp(32px, 5vw, 48px);
+  color: #263b32;
+  margin-bottom: 15px;
+}
+
+.artwork-intro p {
+  font-size: 17px;
+  line-height: 1.8;
+  color: #526158;
+  max-width: 650px;
+  margin: 0 auto;
+}
+
+
+/* =====================================
+   MASONRY-STYLE ARTWORK COLLAGE
+   ===================================== */
+
+.artwork-gallery {
+  columns: 3;
+  column-gap: 20px;
+}
+
+.artwork-item {
+  position: relative;
+  display: block;
+  break-inside: avoid;
+  overflow: hidden;
+  border-radius: 10px;
+  margin: 0 0 20px;
+  background-color: #e6e9e2;
+  outline-offset: 4px;
+}
+
+.artwork-item img {
+  display: block;
+  width: 100%;
+  height: auto;
+  transition: transform 0.4s ease;
+}
+
+
+/* =====================================
+   CAPTIONS ON HOVER
+   ===================================== */
+
+.artwork-caption {
+  position: absolute;
+  inset: auto 0 0 0;
+
+  padding: 35px 20px 20px;
+  color: #ffffff;
+
+  background: linear-gradient(
+    transparent,
+    rgba(20, 35, 27, 0.85)
+  );
+
+  opacity: 0;
+  transform: translateY(10px);
+
+  transition:
+    opacity 0.3s ease,
+    transform 0.3s ease;
+
+  pointer-events: none;
+}
+
+.artwork-caption h3 {
+  color: #ffffff;
+  font-size: 19px;
+  margin: 0 0 6px;
+}
+
+.artwork-caption p {
+  color: #ffffff;
+  font-size: 14px;
+  margin: 0;
+}
+
+
+/* Show caption when hovered or focused */
+
+.artwork-item:hover .artwork-caption,
+.artwork-item:focus .artwork-caption {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.artwork-item:hover img {
+  transform: scale(1.03);
+}
+
+
+/* =====================================
+   RESPONSIVE LAYOUT
+   ===================================== */
+
+@media (max-width: 950px) {
+  .artwork-gallery {
+    columns: 2;
+  }
+}
+
+@media (max-width: 600px) {
+  .artwork-gallery {
+    columns: 1;
+  }
+
+  .artwork-page {
+    padding: 45px 6%;
+  }
+}
+
+/* Touchscreen devices: keep captions visible */
+
+@media (hover: none) {
+  .artwork-caption {
+    opacity: 1;
+    transform: none;
+  }
+}
+
+/* Respect reduced-motion preferences */
+
+@media (prefers-reduced-motion: reduce) {
+  .artwork-item img,
+  .artwork-caption {
+    transition: none;
+  }
+}
