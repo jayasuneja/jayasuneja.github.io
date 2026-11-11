@@ -867,3 +867,75 @@ h2 {
     transition: none;
   }
 }
+
+
+/* =====================================
+   BEYOND WORK PHOTO COLLAGE
+   ===================================== */
+
+.beyond-photo-section {
+  margin-top: 55px;
+}
+
+.beyond-photo-section h3 {
+  font-size: 25px;
+  color: #263b32;
+  margin-bottom: 25px;
+}
+
+/* Photo grid */
+
+.beyond-photo-grid {
+  display: grid;
+  grid-template-columns: repeat(4, minmax(0, 1fr));
+  gap: 18px;
+}
+
+/* Individual photos */
+
+.beyond-photo {
+  margin: 0;
+  min-width: 0;
+}
+
+.beyond-photo img {
+  display: block;
+  width: 100%;
+  height: 230px;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 10px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.08);
+}
+
+/* Short captions */
+
+.beyond-photo figcaption {
+  font-size: 13px;
+  color: #526158;
+  text-align: center;
+  margin-top: 10px;
+  line-height: 1.5;
+}
+
+/* Tablet layout */
+
+@media (max-width: 900px) {
+  .beyond-photo-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+/* Mobile layout */
+
+@media (max-width: 550px) {
+  .beyond-photo-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .beyond-photo img {
+    height: auto;
+    max-height: 350px;
+    object-fit: contain;
+  }
+}
