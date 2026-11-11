@@ -16,7 +16,7 @@ METHODS
 * stacked_rasters: visual of model inputs for DU spatial analysis
 
 RESULTS
-* mz_DU: results of the mzdu methodology, highlighting a major known leak and subsequent insufficient water delivery along a submain
+* mzdu_FL11: results of the mzdu methodology, highlighting a major known leak and subsequent insufficient water delivery along a submain
 * results_elevation: box and whisker plots depicting how elevation influences canopy response visible with multispectral and thermal imagery
 
 
