@@ -283,10 +283,10 @@ h2 {
 .experience-card img.experience-image {
   display: block;
   width: 100%;
-  max-width: 300px;
-  height: 160px;
+  max-width: 600px;
+  height: 320px;
   object-fit: contain;
-  object-position: center;
+  object-position: left center;
   margin: 0 auto 20px;
   border-radius: 8px;
   background-color: #f8f7f2;
