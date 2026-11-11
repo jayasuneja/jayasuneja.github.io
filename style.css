@@ -208,9 +208,12 @@ h2 {
    Images centered and proportions preserved
    ========================================== */
 
+
+/* Master's Research Figures - 30% Larger */
+
 .project-detail .thesis-figure {
   width: 100%;
-  max-width: 500px;
+  max-width: 650px;
   margin: 40px auto;
   text-align: center;
 }
@@ -218,7 +221,7 @@ h2 {
 .project-detail .thesis-figure img {
   display: block;
   width: 100%;
-  max-width: 500px;
+  max-width: 650px;
   height: auto;
   max-height: none;
   object-fit: contain;
@@ -233,6 +236,7 @@ h2 {
   color: #526158;
   text-align: left;
 }
+
 
 .project-detail .thesis-figure figcaption strong {
   color: #263b32;
