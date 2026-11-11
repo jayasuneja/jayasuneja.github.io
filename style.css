@@ -707,3 +707,14 @@ h2 {
   gap: 70px;
   align-items: center;
 }
+
+
+/* Conference image sizing */
+
+.conference-card img.conference-photo {
+  display: block;
+  width: 100%;
+  max-width: 650px;
+  height: auto;
+  margin: 0 auto;
+}
