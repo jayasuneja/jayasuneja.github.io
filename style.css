@@ -60,7 +60,11 @@ nav {
 .nav-links a {
   text-decoration: none;
   color: #244438;
-  font-size: calc(14px + 2pt);
+  font-size: 19px;
+  font-weight: 600;
+  letter-spacing: 0.045em;
+  text-transform: uppercase;
+  line-height: 1.4;
 }
 
 .nav-links a:hover {
