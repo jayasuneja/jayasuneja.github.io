@@ -115,7 +115,10 @@ nav {
 }
 
 .hero-actions {
-  display: block;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 14px;
   margin-top: 25px;
 }
 
@@ -130,6 +133,17 @@ nav {
 
 .button:hover {
   background-color: #315c47;
+}
+
+.button-outline {
+  background-color: transparent;
+  color: #244438;
+  border: 2px solid #244438;
+}
+
+.button-outline:hover {
+  background-color: #244438;
+  color: #ffffff;
 }
 
 
